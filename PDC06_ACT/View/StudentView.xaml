@@ -20,6 +20,22 @@
 
                 <Button WidthRequest="150" Text="Add Student" Command="{Binding AddStudentCommand}" />
             </StackLayout>
+
+            <ListView Grid.Row="1" x:Name="lstStudent" ItemTapped="OnSelectedItem" ItemsSource="{Binding Students}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding StudentId}"/>
+                                <Label Text="{Binding StudentName}"/>
+                                <Label Text="{Binding Course}"/>
+                                <Label Text="{Binding Year}"/>
+                                <Label Text="{Binding Section}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             
         </Grid>
         

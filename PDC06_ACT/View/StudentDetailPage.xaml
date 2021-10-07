@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDC06_ACT.View.StudentDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name ="StudentId"   Text=" {Binding StudentId}" />
+            <Entry x:Name ="StudentName" Text=" {Binding StudentName}" IsReadOnly="True"/>
+            <Entry x:Name ="Course"      Text=" {Binding Course}" />
+            <Entry x:Name ="Year"        Text=" {Binding Year}" />
+            <Entry x:Name ="Section"     Text=" {Binding Section}" />
+
+            <Button Text="Delete Student" Clicked="BtnDelete" />
+            <Button Text="Update Student" Clicked="BtnUpdate" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

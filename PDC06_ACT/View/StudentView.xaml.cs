@@ -1,4 +1,5 @@
-﻿using PDC06_ACT.ViewModel;
+﻿using PDC06_ACT.Model;
+using PDC06_ACT.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,15 @@ namespace PDC06_ACT.View
         {
             InitializeComponent();
             BindingContext = new StudentViewModel();
+        }
+        public async void OnSelectedItem(object sender, ItemTappedEventArgs args)
+        {
+            var student = args.Item as Student;
+            if (student == null)
+                return;
+
+            await Navigation.PushAsync(new StudentDetailPage(student));
+            lstStudent.SelectedItem = null;
         }
     }
 }
